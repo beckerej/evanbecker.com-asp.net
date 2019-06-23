@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>@ViewData["Title"] - EvanBecker</title>
-    
+
     <!-- Title -->
     <title>Milwaukee Web Developer - Evan Becker</title>
 
@@ -38,6 +38,8 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="~/css/custom.css">
+    
+    @RenderSection("Scripts", required: false)
 </head>
 <body>
     <!--
@@ -177,6 +179,21 @@
             </div>
         </div>
         <!-- End Footer -->
+        
+        <!-- Copyright Footer -->
+        <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
+                        <div class="d-lg-flex">
+                            <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2019 © All Rights Reserved.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Copyright Footer -->
+
         <a class="js-go-to u-go-to-v1" href="#"
            data-type="fixed"
            data-position='{
@@ -254,7 +271,5 @@
             }, 200);
         });
     </script>
-
-    @RenderSection("Scripts", required: false)
 </body>
 </html>
