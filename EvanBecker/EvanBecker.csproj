@@ -7,7 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\About.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Home\About.cshtml-old" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\About.cshtml-old" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\About.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
   </ItemGroup>
 
 </Project>

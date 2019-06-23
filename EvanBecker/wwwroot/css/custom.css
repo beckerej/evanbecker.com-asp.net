@@ -1,0 +1,20 @@
+/* Add here all your css styles (customizations) */
+
+/* Fix background on desktop */
+@media (min-width: 992px) {
+    .bgpara {
+        background-size:100%;
+    }
+}
+
+.bgpara {
+    background-image: url('../img/bg.jpg') !important; 
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 991px) {
+    .frontphone{
+        opacity: 0.5;
+        position: absolute !important;
+    }
+}

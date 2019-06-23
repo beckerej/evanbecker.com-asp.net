@@ -1,22 +1,46 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - EvanBecker</title>
+    
+    <!-- Title -->
+    <title>Milwaukee Web Developer - Evan Becker</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="description" content="Evan Becker Portfolio 3D .NET Programmer">
+    <meta name="keywords" content="Evan Becker,3D,Milwaukee,Programmer,Evan,Becker,Web,HTML,CSS,JavaScript,Bootstrap,UnrealEngine,C++,C#,Dotnet,.NET,Bash,Unix,DevOps">
+    <meta name="author" content="Evan Becker">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/vendor/bootstrap/bootstrap.min.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/vendor/icon-hs/style.css">
+    <link rel="stylesheet" href="~/vendor/animate.css">
+    <link rel="stylesheet" href="~/vendor/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="~/vendor/dzsparallaxer/dzsparallaxer.css">
+    <link rel="stylesheet" href="~/vendor/dzsparallaxer/dzsscroller/scroller.css">
+    <link rel="stylesheet" href="~/vendor/dzsparallaxer/advancedscroller/plugin.css">
+    <link rel="stylesheet" href="~/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
+
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="~/css/unify.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/css/custom.css">
 </head>
 <body>
+    <!--
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,37 +61,199 @@
             </div>
         </div>
     </nav>
+    -->
 
     <partial name="_CookieConsentPartial" />
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--static">
+        <div class="u-header__section u-header__section--light g-bg-white u-shadow-v18 g-transition-0_3 g-py-10">
+            <nav class="js-mega-menu navbar navbar-toggleable-md">
+                <div class="container">
+                    <!-- Responsive Toggle Button -->
+                    <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-right-0" type="button"
+                            aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                        <span class="hamburger hamburger--slider">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+                    <!-- Logo -->
+                    <a href="index.html" class="navbar-brand">
+                        <img src="~/images/logo/logo_dark.png" alt="Image Description">
+                    </a>
+                    <!-- End Logo -->
+                    <!-- Navigation -->
+                    <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+                        <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                            <!-- Intro -->
+                            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                                <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
+                            </li>
+                            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                                <a href="about-me.html" class="nav-link g-py-7 g-px-0">About Me</a>
+                            </li>
+                            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                                <a href="contact-me.html" class="nav-link g-py-7 g-px-0">Contact Me</a>
+                            </li>
+                            <!-- End Intro -->
+                        </ul>
+                    </div>
+                    <!-- End Navigation -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+    @RenderBody()
+    <main>
+        <!-- Footer -->
+        <div class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Content -->
+                    <div class="col-lg-4 col-md-6 g-mb-40 g-mb-0--lg">
+                        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
+                            <h2 class="u-heading-v2__title g-color-blue h6 text-uppercase mb-0">Sitemap</h2>
+                        </div>
+                        <nav class="text-uppercase1">
+                            <ul class="list-unstyled g-mt-minus-10 mb-0">
+                                <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
+                                    <h4 class="h6 g-pr-20 mb-0">
+                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="index.html">Home</a>
+                                        <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
+                                    </h4>
+                                </li>
+                                <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
+                                    <h4 class="h6 g-pr-20 mb-0">
+                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="about-me.html">About Me</a>
+                                        <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
+                                    </h4>
+                                </li>
+                                <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
+                                    <h4 class="h6 g-pr-20 mb-0">
+                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="contact-me.html">Contact Me</a>
+                                        <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
+                                    </h4>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Footer Content -->
+                    <div class="col-lg-4 col-md-6 g-mb-40 g-mb-0--lg">
+                        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
+                            <h2 class="u-heading-v2__title g-color-blue h6 text-uppercase mb-0">About Me</h2>
+                        </div>
+                        <p>
+                            I'm a software engineer experienced in 3D applications, DevOps, .NET, IoT, Data Science, DCaaS, and Full-stack
+                            Development.
+                        </p>
+                        <p>
+                            <a href="about-me.html">See More</a>
+                        </p>
+                    </div>
+                    <!-- End Footer Content -->
+                    <!-- Footer Content -->
+                    <div class="col-lg-4 col-md-6 g-mb-40 g-mb-0--lg">
+                        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
+                            <h2 class="u-heading-v2__title g-color-blue h6 text-uppercase mb-0">Social Media</h2>
+                        </div>
+                        <a class="u-icon-v2 g-rounded-3 g-color-white g-color-linkedin--hover g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.linkedin.com/in/evanbeckerdotcom/">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a class="u-icon-v2 g-rounded-3 g-color-white g-color-linkedin--hover g-color-linkedin--hover g-mr-15 g-mb-20" href="https://github.com/beckerej">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a class="u-icon-v2 g-rounded-3 g-color-white g-color-linkedin--hover g-color-linkedin--hover g-mr-15 g-mb-20" href="https://gitlab.com/evanbecker">
+                            <i class="fa fa-gitlab"></i>
+                        </a>
+                        <a class="u-icon-v2 g-rounded-3 g-color-white g-color-linkedin--hover g-color-linkedin--hover g-mr-15 g-mb-20" href="https://www.facebook.com/ebecker.designs/">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                    <!-- End Footer Content -->
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+        <a class="js-go-to u-go-to-v1" href="#"
+           data-type="fixed"
+           data-position='{
+           "bottom": 15,
+           "right": 15
+         }'
+           data-offset-top="400"
+           data-compensation="#js-header"
+           data-show-effect="zoomIn">
+            <i class="hs-icon hs-icon-arrow-top"></i>
+        </a>
+    </main>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - EvanBecker</p>
-        </footer>
-    </div>
+    <!-- JS Global Compulsory -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="~/vendor/tether.min.js"></script>
+    <script src="~/vendor/bootstrap/bootstrap.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="~/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="~/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+    <script src="~/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+    <script src="~/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+    <script src="~/vendor/appear.js"></script>
+    <script src="~/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <!-- JS Unify -->
+    <script src="~/js/hs.core.js"></script>
+    <script src="~/js/components/hs.header.js"></script>
+    <script src="~/js/helpers/hs.hamburgers.js"></script>
+    <script src="~/js/components/hs.tabs.js"></script>
+    <script src="~/js/components/hs.progress-bar.js"></script>
+    <script src="~/js/components/hs.counter.js"></script>
+    <script src="~/js/components/hs.cubeportfolio.js"></script>
+    <script src="~/js/components/hs.go-to.js"></script>
+    <!-- JS Customization -->
+    <script src="~/js/custom.js"></script>
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            // initialization of counters
+            var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
+        });
+
+        $(window).on('load', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+
+            // initialization of cubeportfolio
+            $.HSCore.components.HSCubeportfolio.init('.cbp');
+
+            // initialization of horizontal progress bars
+            var horizontalProgressBars = $.HSCore.components.HSProgressBar.init('.js-hr-progress-bar', {
+                direction: 'horizontal',
+                indicatorSelector: '.js-hr-progress-bar-indicator'
+            });
+        });
+
+        $(window).on('resize', function () {
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
+        });
+    </script>
 
     @RenderSection("Scripts", required: false)
 </body>
