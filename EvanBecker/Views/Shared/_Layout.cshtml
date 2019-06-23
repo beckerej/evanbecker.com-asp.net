@@ -42,28 +42,6 @@
     @RenderSection("Scripts", required: false)
 </head>
 <body>
-    <!--
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">EvanBecker</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    -->
 
     <partial name="_CookieConsentPartial" />
     <!-- Header -->
@@ -91,13 +69,13 @@
                         <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
                             <!-- Intro -->
                             <li class="nav-item g-mx-10--lg g-mx-15--xl">
-                                <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
+                                <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link g-py-7 g-px-0">Home</a>
                             </li>
                             <li class="nav-item g-mx-10--lg g-mx-15--xl">
-                                <a href="about-me.html" class="nav-link g-py-7 g-px-0">About Me</a>
+                                <a asp-area="" asp-controller="Home" asp-action="About" class="nav-link g-py-7 g-px-0">About Me</a>
                             </li>
                             <li class="nav-item g-mx-10--lg g-mx-15--xl">
-                                <a href="contact-me.html" class="nav-link g-py-7 g-px-0">Contact Me</a>
+                                <a asp-area="" asp-controller="Home" asp-action="Contact" class="nav-link g-py-7 g-px-0">Contact Me</a>
                             </li>
                             <!-- End Intro -->
                         </ul>
@@ -123,19 +101,19 @@
                             <ul class="list-unstyled g-mt-minus-10 mb-0">
                                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                                     <h4 class="h6 g-pr-20 mb-0">
-                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="index.html">Home</a>
+                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                                         <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
                                     </h4>
                                 </li>
                                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                                     <h4 class="h6 g-pr-20 mb-0">
-                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="about-me.html">About Me</a>
+                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" asp-area="" asp-controller="Home" asp-action="About">About Me</a>
                                         <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
                                     </h4>
                                 </li>
                                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                                     <h4 class="h6 g-pr-20 mb-0">
-                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="contact-me.html">Contact Me</a>
+                                        <a class="g-color-white-opacity-0_8 g-color-white--hover" asp-area="" asp-controller="Home" asp-action="Contact">Contact Me</a>
                                         <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
                                     </h4>
                                 </li>
