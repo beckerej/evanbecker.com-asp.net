@@ -11,14 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Views\Home\About.cshtml-old" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Views\Home\About.cshtml-old" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Views\Home\About.cshtml" />
   </ItemGroup>
 
