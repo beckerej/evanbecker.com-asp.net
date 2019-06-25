@@ -1,4 +1,4 @@
-﻿<div id="sketch-holder"></div>
+﻿<div id="gameContainer" style="height: 600px; margin: auto"></div>
 
 <!-- About -->
 <section class="g-pt-50 g-pb-100">
@@ -52,8 +52,10 @@
 </section>
 
 @section Scripts {
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
-    <script src="~/p5/addons/p5.dom.js"></script>
-    <script src="~/p5/p5.min.js"></script>
-    <script src="projects/index.js"></script>
+
+    
+    <script src="~/Raymarch/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "@Url.Content("~/Raymarch/wwwroot.json")");
+    </script>
 }

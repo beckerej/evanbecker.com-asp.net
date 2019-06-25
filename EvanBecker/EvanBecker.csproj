@@ -12,6 +12,10 @@
 
   <ItemGroup>
     <None Include="Views\Home\About.cshtml" />
+    <None Include="wwwroot\Raymarch\UnityLoader.js" />
+    <None Include="wwwroot\Raymarch\wwwroot.data.unityweb" />
+    <None Include="wwwroot\Raymarch\wwwroot.wasm.code.unityweb" />
+    <None Include="wwwroot\Raymarch\wwwroot.wasm.framework.unityweb" />
   </ItemGroup>
 
   <ItemGroup>
