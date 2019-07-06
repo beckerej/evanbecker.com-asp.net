@@ -19,7 +19,6 @@ namespace EvanBecker
             var host = new WebHostBuilder()
                 .UseKestrel(options =>
                 {
-                    Console.WriteLine($"Environment: {Environment.GetEnvironmentVariable("MYSECRET_PASS")}");
                     options.Listen(IPAddress.Any, 80);
                     options.Listen(IPAddress.Any, 443, listenOptions =>
                     {
