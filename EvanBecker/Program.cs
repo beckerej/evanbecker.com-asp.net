@@ -17,7 +17,7 @@ namespace EvanBecker
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://*:80", "https://*:443")
+                .UseSetting("https_port", "443")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
