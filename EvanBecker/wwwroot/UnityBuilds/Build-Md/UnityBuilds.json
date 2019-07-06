@@ -1,9 +1,9 @@
 {
 "companyName": "EvanBecker",
 "productName": "RayMarch",
-"dataUrl": "wwwroot.data.unityweb",
-"wasmCodeUrl": "wwwroot.wasm.code.unityweb",
-"wasmFrameworkUrl": "wwwroot.wasm.framework.unityweb",
+"dataUrl": "UnityBuilds.data.unityweb",
+"wasmCodeUrl": "UnityBuilds.wasm.code.unityweb",
+"wasmFrameworkUrl": "UnityBuilds.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},

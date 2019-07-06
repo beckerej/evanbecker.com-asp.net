@@ -1,4 +1,45 @@
-﻿<div id="gameContainer" style="height: 600px; margin: auto"></div>
+﻿<div id="gameContainer" style="height: 600px; margin: auto" position: relative></div>
+<div style="position: absolute; top: 38%; left: 53%; transform: translate(-50%, -50%); margin: 0; padding: 0; width: 100%">
+    <div class="container">
+        <div class="row d-flex align-items-lg-center flex-wrap g-mb-60 g-mb-0--lg">
+            <div class="col-md-2 col-lg-2"></div>
+            <div class="col-md-8 col-lg-8">
+                <h2 class="g-color-white g-font-size-36 text-uppercase g-line-height-1_2 g-mb-30">
+                    <span class="g-font-weight-900 g-color-primary">
+                        PROJ: <span class="g-font-weight-600">Ray Marcher</span>
+                        <div class="g-color-white g-font-weight-400" style="display: inline-block">/ Sphere Tracer</div>
+                    </span>
+                </h2>
+
+                <p class="g-color-gray-light-v5 g-font-size-16 g-mb-35 pull-right">
+                    A <span class="g-color-primary g-font-weight-600">signed distance functions (SDF)</span> is a method of returning 
+                    the shortest distance between a coordinate and a surface. We render these SDFs in the scene using a
+                    <span class="g-color-primary g-font-weight-600">ray marching</span>
+                    algorithm, also commonly referred to as sphere tracing.
+                    <br /><br />SDF's can also be used for generating interesting 3D fractals. My goal is to use this ray marching
+                    framework I have built to generate future dynamic and detailed fractals.
+                </p>
+
+                <a href="#" class="btn btn-xl btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase text-left rounded-0 g-mr-10 g-mb-15">
+                    <span class="pull-left">
+                        Play Demo Online
+                        <span class="d-block g-font-size-11">On a Web Browser with WebGL</span>
+                    </span>
+                    <i class="fa fa-chrome float-right g-font-size-32 g-ml-15"></i>
+                </a>
+
+                <a href="#" class="btn btn-xl btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase text-left rounded-0 g-mr-10 g-mb-15">
+                    <span class="pull-left">
+                        View src on GitHub
+                        <span class="d-block g-font-size-11">View the Unity C# Shader Code</span>
+                    </span>
+                    <i class="fa fa-github float-right g-font-size-32 g-ml-15"></i>
+                </a> 
+            </div>
+            <div class="col-md-2 col-lg-2"></div>
+        </div>
+    </div>
+</div>
 
 <!-- About -->
 <section class="g-pt-50 g-pb-100">
@@ -12,9 +53,14 @@
                 <div class="g-mt-minus-30 g-mt-0--md g-ml-minus-100--lg">
                     <div class="g-mb-20">
                         <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-35--lg g-line-height-1_2 mb-4">
-                            Building the<br>Perfect Website
+                            Rendering a 3D World
                         </h2>
-                        <p class="g-font-size-16">Customize your website by choosing the features of your webpage. You may include example websites to help get your vision across or just tell me your vision; I'll make it happen.</p>
+                        <p class="g-font-size-16">
+                            Working in 3D coordinate systems has grew into more than just a hobby;
+                            Whether it's working in CAD software for 3D printing or CNCs projects, building 3D CAD-like software,
+                            transforming 3D objects in real space, designing 3D games, or even building renderers to push the 
+                            limit of what's possible, I'm doing it.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -34,9 +80,9 @@
                 <div class="g-mt-minus-30 g-mt-0--md g-ml-minus-100--lg">
                     <div class="g-mb-20">
                         <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-35--lg g-line-height-1_2 mb-4">
-                            Have Questions?<br>
+                            Want to talk?<br>
                         </h2>
-                        <p class="g-font-size-16">Get in contact and find out more about the web development process. Have a large project? This is the best place to inquire about my services!</p>
+                        <p class="g-font-size-16">Get in contact with me now and find out more about my experience. Have a large project and need a helping hand? This is the best place to inquire about my services.</p>
                     </div>
                     <a class="btn u-btn-blue g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="contact-me.html">
                         Contact Me
@@ -52,10 +98,8 @@
 </section>
 
 @section Scripts {
-
-    
-    <script src="~/Raymarch/UnityLoader.js"></script>
+    <script src="~/UnityBuilds/Build/UnityLoader.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "@Url.Content("~/Raymarch/wwwroot.json")");
+        var gameInstance = UnityLoader.instantiate("gameContainer", "@Url.Content("~/UnityBuilds/Build/UnityBuilds.json")");
     </script>
 }
