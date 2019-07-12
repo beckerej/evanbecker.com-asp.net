@@ -16,5 +16,6 @@ RUN dotnet publish "EvanBecker.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
+COPY EvanBecker/www.evanbecker.com.pfx .
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "EvanBecker.dll"]
