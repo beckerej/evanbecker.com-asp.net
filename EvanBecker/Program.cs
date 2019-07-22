@@ -16,6 +16,14 @@ namespace EvanBecker
     {
         public static void Main(string[] args)
         {
+#if (DEBUG)
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
+#else
             var host = new WebHostBuilder()
                 .UseKestrel(options =>
                 {
@@ -31,7 +39,7 @@ namespace EvanBecker
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
-
+#endif
             host.Run();
         }
     }
