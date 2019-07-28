@@ -1,4 +1,8 @@
-﻿<div class="hidden-md-down">
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hidden-md-down">
     <div id="gameContainer" style="height: 600px; margin: auto" position: relative></div>
     <div style="position: absolute; top: 38%; left: 53%; transform: translate(-50%, -50%); margin: 0; padding: 0; width: 100%">
         <div class="container">
@@ -21,7 +25,7 @@
                         framework I have built to generate future dynamic and detailed fractals.
                     </p>
 
-                    <a href="#" class="btn btn-xl btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase text-left rounded-0 g-mr-10 g-mb-15">
+                    <a asp-area="" asp-controller="Home" asp-action="Raymarch" class="btn btn-xl btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase text-left rounded-0 g-mr-10 g-mb-15">
                         <span class="pull-left">
                             Play Demo Online
                             <span class="d-block g-font-size-11">On a Web Browser with WebGL</span>
@@ -29,7 +33,7 @@
                         <i class="fa fa-chrome float-right g-font-size-32 g-ml-15"></i>
                     </a>
 
-                    <a href="#" class="btn btn-xl btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase text-left rounded-0 g-mr-10 g-mb-15">
+                    <a href="https://github.com/beckerej/Raymarch" class="btn btn-xl btn-primary g-font-weight-600 g-letter-spacing-0_5 text-uppercase text-left rounded-0 g-mr-10 g-mb-15">
                         <span class="pull-left">
                             View src on GitHub
                             <span class="d-block g-font-size-11">View the Unity C# Shader Code</span>
@@ -46,38 +50,42 @@
 <div class="hidden-lg-up">
     <!-- Promo Block - Parallax -->
     <section class="g-bg-gray-light-v5 bgpara">
-      <div class="container">
-        <div class="row justify-content-between" data-calc-target="#js-header" style="height: calc(100vh - 80px);">
-          <div class="col-md-5 align-self-center">
-              <div style="text-align: center;" >
-                  <br><p><h2 class="g-color-white g-font-size-36 text-uppercase g-line-height-1_2 g-mb-30">Mobile-Friendly
-                      <br><span class="g-font-weight-700"><div class="g-color-blue">With Any Browser</div></span></h2></p>
-                  <p class="g-color-gray-light-v5 g-font-size-16 g-mb-35">
-                      Get a responsive website built with the latest CSS frameworks meaning your website not only works, but looks good with any modern browser and device. Get an <strong>App-like</strong> experience for your website!
-                  </p>
+        <div class="container">
+            <div class="row justify-content-between" data-calc-target="#js-header" style="height: calc(100vh - 80px);">
+                <div class="col-md-5 align-self-center">
+                    <div style="text-align: center;">
+                        <br><p>
+                            <h2 class="g-color-white g-font-size-36 text-uppercase g-line-height-1_2 g-mb-30">
+                                Mobile-Friendly
+                                <br><span class="g-font-weight-700"><div class="g-color-blue">With Any Browser</div></span>
+                            </h2>
+                        </p>
+                        <p class="g-color-gray-light-v5 g-font-size-16 g-mb-35">
+                            Get a responsive website built with the latest CSS frameworks meaning your website not only works, but looks good with any modern browser and device. Get an <strong>App-like</strong> experience for your website!
+                        </p>
 
-                  <br>
-              </div>
-            <a class="btn btn-md u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
-              <i class="g-font-size-28 mr-3 fa fa-apple"></i>
-              <span class="d-inline-block text-left">
-                <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
-                <span class="d-block g-font-size-10">From App Store</span>
-              </span>
-            </a>
-            <a class="btn btn-md u-btn-teal u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
-              <i class="g-font-size-28 mr-3 fa fa-android"></i>
-              <span class="d-inline-block text-left">
-                <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
-                <span class="d-block g-font-size-10">From Play Market</span>
-              </span>
-            </a>
-          </div>
-          <div class="col-md-6 align-self-end g-overflow-hidden frontphone">
-            <img class="img-fluid" src="~/images/inline/inline1.png" alt="Evan Becker" data-animation="fadeInUp" data-animation-delay="1200" data-animation-duration="1500">
-              </div>
+                        <br>
+                    </div>
+                    <a class="btn btn-md u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
+                        <i class="g-font-size-28 mr-3 fa fa-apple"></i>
+                        <span class="d-inline-block text-left">
+                            <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
+                            <span class="d-block g-font-size-10">From App Store</span>
+                        </span>
+                    </a>
+                    <a class="btn btn-md u-btn-teal u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
+                        <i class="g-font-size-28 mr-3 fa fa-android"></i>
+                        <span class="d-inline-block text-left">
+                            <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
+                            <span class="d-block g-font-size-10">From Play Market</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6 align-self-end g-overflow-hidden frontphone">
+                    <img class="img-fluid" src="~/images/inline/inline1.png" alt="Evan Becker" data-animation="fadeInUp" data-animation-delay="1200" data-animation-duration="1500">
+                </div>
+            </div>
         </div>
-      </div>
     </section>
     <!-- End Promo Block - Parallax -->
 </div>
@@ -99,7 +107,7 @@
                         <p class="g-font-size-16">
                             Working in 3D coordinate systems has grew into more than just a hobby;
                             Whether it's working in CAD software for 3D printing or CNCs projects, building 3D CAD-like software,
-                            transforming 3D objects in real space, designing 3D games, or even building renderers to push the 
+                            transforming 3D objects in real space, designing 3D games, or even building renderers to push the
                             limit of what's possible, I'm doing it.
                         </p>
                     </div>

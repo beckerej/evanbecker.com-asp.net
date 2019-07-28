@@ -29,7 +29,7 @@ namespace EvanBecker.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Raymarch()
         {
             return View();
         }

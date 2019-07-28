@@ -1,0 +1,10 @@
+﻿<div class="hidden-md-down">
+    <div id="gameContainer" style="height: 600px; margin: auto" position: relative></div>
+</div>
+
+@section Scripts {
+    <script src="~/UnityBuilds/Build/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "@Url.Content("~/UnityBuilds/Build/UnityBuilds.json")");
+    </script>
+}
