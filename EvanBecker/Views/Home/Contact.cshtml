@@ -37,39 +37,69 @@
             </div>
         </div>
     </div>
-    <form action="form.php" method="POST">
         <div class="row justify-content-center">
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-6 form-group g-mb-20">
                         <label class="g-color-gray-dark-v2 g-font-size-13">First name</label>
-                        <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text" name="first_name" placeholder="Evan">
+                        <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text" id="first_name" name="first_name" placeholder="Evan">
                     </div>
                     <div class="col-md-6 form-group g-mb-20">
                         <label class="g-color-gray-dark-v2 g-font-size-13">Last name</label>
-                        <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text" name="last_name" placeholder="Doe">
+                        <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text" id="last_name" name="last_name" placeholder="Doe">
                     </div>
                 </div>
                 <div class="g-mb-20">
                     <label class="g-color-gray-dark-v2 g-font-size-13">Your email</label>
-                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="email" name="email" placeholder="evandoe@gmail.com">
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="email" id="email" name="email" placeholder="evandoe@gmail.com">
                 </div>
                 <div class="g-mb-20">
                     <label class="g-color-gray-dark-v2 g-font-size-13">Phone number</label>
-                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="tel" name="phone" placeholder="(555) 555 5555">
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="tel" id="phone" name="phone" placeholder="(555) 555 5555">
                 </div>
 
             </div>
             <div class="col-md-7">
                 <div class="g-mb-40">
                     <label class="g-color-gray-dark-v2 g-font-size-13">Your message</label>
-                    <textarea class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" name="message" rows="12" placeholder="Hi there, I am interested in..."></textarea>
+                    <textarea class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" id="message" name="message" rows="12" placeholder="Hi there, I am interested in..."></textarea>
                 </div>
                 <div class="text-right">
-                    <button class="btn u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase rounded-3 g-py-12 g-px-35" name="submit" type="submit" role="button">Send</button>
+                    <button class="btn u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase rounded-3 g-py-12 g-px-35" onclick="SendEmail()">Send</button>
                 </div>
             </div>
         </div>
-    </form>
 </section>
 <!-- End Contact Form -->
+
+@section Scripts {
+    <script>
+        function SendEmail() {
+            $.ajax(
+                {
+                    type: "POST",
+                    url: '@Url.Action("PostEmail", "Home")',
+                    data: JSON.stringify({
+                        FirstName: $("#first_name").val().toString(),
+                        LastName: $("#last_name").val().toString(),
+                        Email: $("#email").val().toString(),
+                        Phone: $("#phone").val().toString(),
+                        Message: $("#message").val().toString()
+                    }),
+                    dataType: 'json',
+                    contentType: "application/json",
+                    error: function(result) {
+                        console.log(result);
+                    },
+                    success: function(result) {
+                        alert(result);
+                        $("#first_name").val("");
+                        $("#last_name").val("");
+                        $("#email").val("");
+                        $("#phone").val("");
+                        $("#message").val("");
+                    }
+                });
+        }
+    </script>
+}
