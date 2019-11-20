@@ -1,0 +1,253 @@
+﻿@using Newtonsoft.Json
+
+@{
+    ViewData["Title"] = "ServerStatus";
+}
+
+    <section class="container g-pt-50 g-pb-40 g-mb-10">
+        <figure class="row">
+        <h2>Server Status</h2>
+        </figure>
+            <figure class="row">
+                <p>
+                    <h5>Server www_td</h5>
+                    @if (Model.IsOnline)
+                    {
+                        <span class="d-block g-font-size-12 g-color-green">Online</span>
+                        <figure class="row">
+                            <div class="col-md-12 col-lg-6">
+                                <canvas id="memoryChart_wwwtd" width="400" height="200"></canvas>
+                            </div>
+                            <div class="col-md-12 col-lg-6">
+                                <canvas id="cpuChart_wwwtd" width="400" height="200"></canvas>
+                            </div>
+                            <div class="col-md-12 col-lg-6">
+                                <canvas id="diskChart_wwwtd" width="400" height="200"></canvas>
+                            </div>
+                        </figure>
+                    }
+                    else
+                    {
+                        <span class="d-block g-font-size-12 g-color-red">Offline</span>
+                    }
+                </p>
+            </figure>
+</section>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+        var labels = @Html.Raw(Json.Serialize(Model.DateTimes));
+        var memoryChart_wwwtd_options = {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Memory Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [
+                    {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time'
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }
+                ]
+            },
+            elements: {
+                point:{
+                    radius: 0
+                }
+            }
+        };
+        var cpuChart_wwwtd_options = {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'CPU Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [
+                    {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time'
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }
+                ]
+            },
+            elements: {
+                point:{
+                    radius: 0
+                }
+            }
+        };
+        var diskChart_wwwtd_options = {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Disk Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [
+                    {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time'
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }
+                ]
+            },
+            elements: {
+                point:{
+                    radius: 0
+                }
+            }
+        };
+
+        var memoryChart_wwwtd_config = {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Total Memory",
+                    data: @Html.Raw(Json.Serialize(Model.TotalMemories)),
+                    fill: false,
+                    backgroundColor: "rgb(255, 99, 132)",
+                    borderColor: "rgb(255, 99, 132)"
+                }, {
+                    label: 'Used Memory',
+                    fill: false,
+                    data: @Html.Raw(Json.Serialize(Model.UsedMemories)),
+                    backgroundColor: "rgb(54, 162, 235)",
+                    borderColor: "rgb(54, 162, 235)"
+                }, {
+                    label: 'Shared Memory',
+                    fill: false,
+                    data: @Html.Raw(Json.Serialize(Model.SharedMemories)),
+                    backgroundColor: "rgb(75, 192, 192",
+                    borderColor: "rgb(75, 192, 192"
+                }, {
+                    label: 'Free Memory',
+                    fill: false,
+                    data: @Html.Raw(Json.Serialize(Model.FreeMemories)),
+                    backgroundColor: "rgb(255, 159, 64)",
+                    borderColor: "rgb(255, 159, 64)"
+                }, {
+                    label: 'Cache Memory',
+                    fill: false,
+                    data: @Html.Raw(Json.Serialize(Model.CacheMemories)),
+                    backgroundColor: "rgb(153, 102, 255))",
+                    borderColor: "rgb(153, 102, 255)"
+                }, {
+                    label: 'Available Memory',
+                    fill: false,
+                    data: @Html.Raw(Json.Serialize(Model.AvailableMemories)),
+                    backgroundColor: "rgb(255, 205, 86)",
+                    borderColor: "rgb(255, 205, 86)"
+                }]
+            },
+            options: memoryChart_wwwtd_options
+        };
+
+        var cpuChart_wwwtd_config = {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "CPU Usages",
+                    data: @Html.Raw(Json.Serialize(Model.CpuUsages)),
+                    fill: false,
+                    backgroundColor: "rgb(255, 99, 132)",
+                    borderColor: "rgb(255, 99, 132)"
+                }, {
+                    label: 'CPU Idles',
+                    fill: false,
+                    data: @Html.Raw(Json.Serialize(Model.CpuIdles)),
+                    backgroundColor: "rgb(54, 162, 235)",
+                    borderColor: "rgb(54, 162, 235)"
+                }]
+            },
+            options: cpuChart_wwwtd_options
+        };
+
+        var diskChart_wwwtd_config = {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Disk Usages",
+                    data: @Html.Raw(Json.Serialize(Model.DiskUsages)),
+                    fill: false,
+                    backgroundColor: "rgb(255, 99, 132)",
+                    borderColor: "rgb(255, 99, 132)"
+                }]
+            },
+            options: diskChart_wwwtd_options
+        };
+
+        window.onload = function() {
+            const memoryChart_wwwtd_ctx = document.getElementById('memoryChart_wwwtd').getContext('2d');
+            const cpuChart_wwwtd_ctx = document.getElementById('cpuChart_wwwtd').getContext('2d');
+            const diskChart_wwwtd_ctx = document.getElementById('diskChart_wwwtd').getContext('2d');
+            window.myLine = new window.Chart(memoryChart_wwwtd_ctx, memoryChart_wwwtd_config);
+            window.myLine = new window.Chart(cpuChart_wwwtd_ctx, cpuChart_wwwtd_config);
+            window.myLine = new window.Chart(diskChart_wwwtd_ctx, diskChart_wwwtd_config);
+        };
+
+    </script>
+}

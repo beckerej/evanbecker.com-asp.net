@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Http
+@{
     ViewData["Title"] = "Home";
 }
 
@@ -49,37 +50,38 @@
 
 <div class="hidden-lg-up">
     <!-- Promo Block - Parallax -->
-    <section class="g-bg-gray-light-v5 bgpara">
+    <section class="g-bg-gray-light-v5 bgpara" style="background-image: url('@Url.Content("~/images/infinite.png")') !important; background-size: auto 100%">
         <div class="container">
-            <div class="row justify-content-between" data-calc-target="#js-header" style="height: calc(100vh - 80px);">
+            <div class="row justify-content-between" data-calc-target="#js-header" style="height: calc(60vh);">
                 <div class="col-md-5 align-self-center">
                     <div style="text-align: center;">
-                        <br><p>
+                        <br>
+                        <p>
                             <h2 class="g-color-white g-font-size-36 text-uppercase g-line-height-1_2 g-mb-30">
-                                Mobile-Friendly
-                                <br><span class="g-font-weight-700"><div class="g-color-blue">With Any Browser</div></span>
+                                <b>PROJ:</b> Ray Marcher
+                                <br>
+                                <span class="g-font-weight-700">
+                                    <div class="g-color-blue">A Sphere Tracer</div>
+                                </span>
                             </h2>
                         </p>
                         <p class="g-color-gray-light-v5 g-font-size-16 g-mb-35">
-                            Get a responsive website built with the latest CSS frameworks meaning your website not only works, but looks good with any modern browser and device. Get an <strong>App-like</strong> experience for your website!
+                            A signed distance functions (SDF) is a method of returning the shortest distance between a coordinate and a surface. We render these SDFs in the scene using a ray marching algorithm, also commonly referred to as sphere tracing.
                         </p>
-
+                        <p class="g-color-gray-light-v5 g-font-size-16 g-mb-35">
+                            SDF's can also be used for generating interesting 3D fractals. My goal is to use this ray marching framework I have built to generate future dynamic and detailed fractals.
+                        </p>
                         <br>
+                        
+                        <a class="btn btn-md u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="@Url.Action("Raymarch", "Home")">
+                            <i class="g-font-size-28 mr-3 fa fa-gamepad"></i>
+                            <span class="d-inline-block text-left">
+                                <span class="d-block g-font-weight-600 g-font-size-13">View Online</span>
+                                <span class="d-block g-font-size-10">(Requires a desktop)</span>
+                            </span>
+                        </a>
                     </div>
-                    <a class="btn btn-md u-btn-primary u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
-                        <i class="g-font-size-28 mr-3 fa fa-apple"></i>
-                        <span class="d-inline-block text-left">
-                            <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
-                            <span class="d-block g-font-size-10">From App Store</span>
-                        </span>
-                    </a>
-                    <a class="btn btn-md u-btn-teal u-btn-hover-v1-3 g-letter-spacing-0_5 text-uppercase g-rounded-10 g-px-20 g-py-10 mx-2 g-mb-15" href="#">
-                        <i class="g-font-size-28 mr-3 fa fa-android"></i>
-                        <span class="d-inline-block text-left">
-                            <span class="d-block g-font-weight-600 g-font-size-13">Download app</span>
-                            <span class="d-block g-font-size-10">From Play Market</span>
-                        </span>
-                    </a>
+                    
                 </div>
                 <div class="col-md-6 align-self-end g-overflow-hidden frontphone">
                     <img class="img-fluid" src="~/images/inline/inline1.png" alt="Evan Becker" data-animation="fadeInUp" data-animation-delay="1200" data-animation-duration="1500">
@@ -133,7 +135,7 @@
                         </h2>
                         <p class="g-font-size-16">Get in contact with me now and find out more about my experience. Have a large project and need a helping hand? This is the best place to inquire about my services.</p>
                     </div>
-                    <a class="btn u-btn-blue g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="contact-me.html">
+                    <a class="btn u-btn-blue g-brd-2 g-brd-white g-font-size-13 g-rounded-50 g-pl-20 g-pr-15 g-py-9" href="@Url.Action("Contact", "Home")">
                         Contact Me
                         <span class="align-middle u-icon-v3 g-width-16 g-height-16 g-color-black g-bg-white g-font-size-11 rounded-circle ml-3">
                             <i class="fa fa-angle-right"></i>

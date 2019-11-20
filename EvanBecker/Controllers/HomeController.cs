@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EvanBecker.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace EvanBecker.Controllers
@@ -22,7 +23,6 @@ namespace EvanBecker.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
@@ -40,6 +40,30 @@ namespace EvanBecker.Controllers
         public IActionResult Contact()
         {
             return View();
+        }
+
+        public async Task<IActionResult> ServerStatus()
+        {
+            MachineStatsViewModel vm;
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    using (var response = await httpClient.GetAsync("http://138.197.9.190/api/machinestats"))
+                    {
+                        var apiResponse = response.Content.ReadAsStringAsync();
+                        var machineStats = JsonConvert.DeserializeObject<List<MachineStats>>(await apiResponse);
+                        machineStats = machineStats.Where((x, i) => i % 6 == 0).TakeLast(5 * 60).ToList(); // take 1 every minute of last 5 hours
+                        vm = new MachineStatsViewModel(machineStats) { IsOnline = true };
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                vm = new MachineStatsViewModel(new List<MachineStats>()) { IsOnline = false };
+            }
+            
+            return View(vm);
         }
 
         [HttpPost]
